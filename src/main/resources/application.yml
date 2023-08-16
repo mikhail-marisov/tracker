@@ -1,0 +1,18 @@
+spring:
+  h2:
+    console:
+      enabled: true
+  application:
+    name: tracker
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    url: jdbc:h2:mem:tracker
+    username:
+    password:
+    driver-class-name: org.h2.Driver
+  #liquibase:
+    #change-log: db/changelog/db.changelog-master.yaml
+    #enabled: true
