@@ -1,5 +1,7 @@
 package com.example.tracker.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -12,6 +14,7 @@ public class DepStatus {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "departure_id")
+    @JsonIgnore
     private Departure departure;
 
     @Column(name = "time_in")
@@ -24,6 +27,9 @@ public class DepStatus {
     @JoinColumn(name = "post_office_id")
     private PostOffice postOffice;
 
+    @Column(name = "is_delivered")
+    private boolean isDelivered;
+
     public DepStatus() {}
 
     public DepStatus(Departure departure, LocalDateTime timeIn, LocalDateTime timeOut, PostOffice postOffice) {
@@ -31,6 +37,10 @@ public class DepStatus {
         this.timeIn = timeIn;
         this.timeOut = timeOut;
         this.postOffice = postOffice;
+    }
+
+    public boolean isDelivered() {
+        return isDelivered;
     }
 
     public Long getId() {
@@ -67,5 +77,9 @@ public class DepStatus {
 
     public void setPostOffice(PostOffice postOffice) {
         this.postOffice = postOffice;
+    }
+
+    public void setDelivered(boolean delivered) {
+        isDelivered = delivered;
     }
 }

@@ -8,5 +8,5 @@ import java.time.LocalDateTime;
 
 public interface DepstatusService {
 
-    DepStatus create(Departure departure, LocalDateTime timeIn, LocalDateTime timeOut, PostOffice postOffice);
+    DepStatus create(Departure departure, String postOfficeIndex);
 }

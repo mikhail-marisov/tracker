@@ -1,5 +1,7 @@
 package com.example.tracker.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -23,8 +25,9 @@ public class Departure {
     @Column(name = "recipient_name")
     private String recipientName;
 
+    @OrderBy("timeIn")
     @OneToMany(mappedBy = "departure")
-    List<DepStatus> depStatusList;
+    private List<DepStatus> depStatusList;
 
     public Departure() {}
     public Departure(DepType type, String recipientIndex, String recipientAddress, String recipientName) {

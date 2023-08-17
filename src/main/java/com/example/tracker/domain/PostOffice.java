@@ -16,16 +16,17 @@ public class PostOffice {
     @Column(name = "Office_address")
     private String officeAddress;
 
-    @OneToOne(mappedBy = "postOffice")
-    DepStatus depStatus;
 
     public PostOffice() {}
 
-    public PostOffice(String officeIndex, String officeName, String officeAddress, DepStatus depStatus) {
+    public PostOffice(String officeIndex, String officeName, String officeAddress) {
         this.officeIndex = officeIndex;
         this.officeName = officeName;
         this.officeAddress = officeAddress;
-        this.depStatus = depStatus;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getOfficeIndex() {
@@ -40,9 +41,7 @@ public class PostOffice {
         return officeAddress;
     }
 
-    public DepStatus getDepStatus() {
-        return depStatus;
-    }
+
 
     public void setOfficeIndex(String officeIndex) {
         this.officeIndex = officeIndex;
@@ -56,7 +55,5 @@ public class PostOffice {
         this.officeAddress = officeAddress;
     }
 
-    public void setDepStatus(DepStatus depStatus) {
-        this.depStatus = depStatus;
-    }
+
 }
