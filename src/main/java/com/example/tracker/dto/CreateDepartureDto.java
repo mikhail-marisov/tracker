@@ -9,6 +9,14 @@ public class CreateDepartureDto {
 
     private String  postOfficeIndex;
 
+    public CreateDepartureDto(String type, String recipientIndex, String recipientAddress, String recipientName, String postOfficeIndex) {
+        this.type = type;
+        this.recipientIndex = recipientIndex;
+        this.recipientAddress = recipientAddress;
+        this.recipientName = recipientName;
+        this.postOfficeIndex = postOfficeIndex;
+    }
+
     public String getPostOfficeIndex() {
         return postOfficeIndex;
     }
