@@ -1,25 +1,20 @@
 package com.example.tracker.controller;
 
 import com.example.tracker.helper.DepartureHelper;
-import com.example.tracker.repository.DepStatusRepository;
 import com.example.tracker.repository.DepartureRepository;
 import com.example.tracker.service.DepartureServiceImpl;
 import com.example.tracker.util.JsonUtil;
-import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultActions;
-
-import java.util.Optional;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -63,14 +58,4 @@ public class DepartureControllerTest {
                 .andExpect(status().isOk());
 
     }
-
-    /*@Test
-    void getAllUsersCards() throws Exception {
-        when(cardService.getAllUsersCards(1L)).thenReturn(Set.of(CardHelper.getCardDto()));
-
-        mockMvc.perform(get("/api/v1/card/users/1/cards"))
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(content().json(JsonUtil.writeValue(Set.of(CardHelper.getCardDto()))))
-                .andExpect(status().isOk());
-    }*/
 }

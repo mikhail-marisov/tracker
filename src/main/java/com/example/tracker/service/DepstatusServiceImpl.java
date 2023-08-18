@@ -2,7 +2,6 @@ package com.example.tracker.service;
 
 import com.example.tracker.domain.DepStatus;
 import com.example.tracker.domain.Departure;
-import com.example.tracker.domain.PostOffice;
 import com.example.tracker.repository.DepStatusRepository;
 import com.example.tracker.repository.PostOfficeRepository;
 import org.springframework.stereotype.Service;

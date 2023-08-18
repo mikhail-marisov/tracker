@@ -17,10 +17,4 @@ public class DepStatusTimeDto {
         this.timeOut = timeOut;
         this.postOffice = postOffice;
     }
-
-    /*DepStatus(new Departure(DepType.LETTER, "010203", "Address", "Name" ),
-                LocalDateTime.now(),
-                LocalDateTime.now(),
-                new PostOffice("010203", "Name", "Address"));*/
-
 }
