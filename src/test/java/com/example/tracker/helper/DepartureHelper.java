@@ -7,12 +7,27 @@ import com.example.tracker.domain.PostOffice;
 import com.example.tracker.dto.CreateDepartureDto;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DepartureHelper {
 
     public static Departure getDeparture() {
         return new Departure(DepType.LETTER, "010203", "Address", "Name" );
 
+    }
+
+
+    public static Departure getDepartureWithStatus() {
+        Departure departure = new Departure(DepType.LETTER, "010203", "Address", "Name" );
+        List<DepStatus> depStatusList = new ArrayList<>();
+        DepStatus status = new DepStatus(departure,
+                LocalDateTime.of(2023, 9, 19, 14, 5),
+                LocalDateTime.of(2023, 9, 19, 14, 5),
+                new PostOffice("010203", "Name", "Address"));
+        depStatusList.add(status);
+        departure.setDepStatusList(depStatusList);
+        return departure;
     }
 
     public static DepStatus getDepStatus() {

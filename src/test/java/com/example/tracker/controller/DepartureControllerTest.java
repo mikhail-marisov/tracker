@@ -1,6 +1,8 @@
 package com.example.tracker.controller;
 
 import com.example.tracker.helper.DepartureHelper;
+import com.example.tracker.repository.DepStatusRepository;
+import com.example.tracker.repository.DepartureRepository;
 import com.example.tracker.service.DepartureServiceImpl;
 import com.example.tracker.util.JsonUtil;
 import org.json.JSONObject;
@@ -11,6 +13,8 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
+
+import java.util.Optional;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
@@ -24,6 +28,8 @@ public class DepartureControllerTest {
 
     @MockBean
     private DepartureServiceImpl departureService;
+    @MockBean
+    private DepartureRepository departureRepository;
     @Autowired
     private MockMvc mockMvc;
 
